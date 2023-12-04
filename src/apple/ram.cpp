@@ -15,31 +15,13 @@
 namespace hwinfo {
 
 // _____________________________________________________________________________________________________________________
-std::string RAM::getVendor() {
-  // TODO: implement
-  return "<unknown>";
-}
+Memory::Memory() {}
 
 // _____________________________________________________________________________________________________________________
-std::string RAM::getName() {
-  // TODO: implement
-  return "<unknown>";
-}
+const std::vector<Memory::Module>& Memory::modules() const { return _modules; }
 
 // _____________________________________________________________________________________________________________________
-std::string RAM::getModel() {
-  // TODO: implement
-  return "<unknown>";
-}
-
-// _____________________________________________________________________________________________________________________
-std::string RAM::getSerialNumber() {
-  // TODO: implement
-  return "<unknown>";
-}
-
-// _____________________________________________________________________________________________________________________
-int64_t RAM::getTotalSize_Bytes() {
+int64_t Memory::total_Bytes() const {
   int64_t memsize = 0;
   size_t size = sizeof(memsize);
   if (sysctlbyname("hw.memsize", &memsize, &size, nullptr, 0) == 0) {
@@ -48,7 +30,9 @@ int64_t RAM::getTotalSize_Bytes() {
   return -1;
 }
 
-int64_t RAM::getAvailableMemory() { return -1; }
+int64_t Memory::free_Bytes() const { return -1; }
+
+int64_t Memory::available_Bytes() const { return -1; }
 
 }  // namespace hwinfo
 

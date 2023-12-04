@@ -10,25 +10,28 @@
 namespace hwinfo {
 
 // _____________________________________________________________________________________________________________________
-std::string MainBoard::getVendor() {
+MainBoard::MainBoard() {}
+
+// _____________________________________________________________________________________________________________________
+std::string MainBoard::vendor() const {
   // TODO: implement
   return "<unknown>";
 }
 
 // _____________________________________________________________________________________________________________________
-std::string MainBoard::getName() {
+std::string MainBoard::name() const {
   // TODO: implement
   return "<unknown>";
 }
 
 // _____________________________________________________________________________________________________________________
-std::string MainBoard::getVersion() {
+std::string MainBoard::version() const {
   // TODO: implement
   return "<unknown>";
 }
 
 // _____________________________________________________________________________________________________________________
-std::string MainBoard::getSerialNumber() {
+std::string MainBoard::serialNumber() const {
   // TODO: implement
   return "<unknown>";
 }
